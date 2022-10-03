@@ -15,6 +15,7 @@ async function eventHandler(event) {
     return new Response("500")
   }
   const resp = await fetch("https://"+target,req)
+  console.log(resp)
   return resp
 }
 </script>
