@@ -1,4 +1,6 @@
-addEventListener("fetch", event => {
+
+<script>
+  addEventListener("fetch", event => {
   event.respondWith(eventHandler(event))
 })
 
@@ -7,7 +9,7 @@ async function eventHandler(event) {
   const url = req.url
     // YourWorkersName.YourAccountName.修改为你的works地址
     // xxxxxxx改成任意一串字符，作为path，当做密码，不要公开
-  const target = url.replace("http://muddy-heart-0365.zonghewang.workers.dev/D1yYYcXzCmPOONvb0LQ/","")
+  const target = url.replace("https://zonghewang.github.io/D1yYYcXzCmPOONvb0LQ/","")
   req.url = target;
   if(target.startsWith("http")){
     return new Response("500")
@@ -15,3 +17,4 @@ async function eventHandler(event) {
   const resp = await fetch("https://"+target,req)
   return resp
 }
+</script>
